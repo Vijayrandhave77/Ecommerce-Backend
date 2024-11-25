@@ -18,7 +18,7 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization']
 }
 
-// app.use(cors(corsOptions))
+app.use(cors())
 
 app.get('/',(req,res)=>{
     res.send("Welcome to my VR77 E-commerce website")
