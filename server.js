@@ -14,7 +14,6 @@ const PORT = process.env.PORT || 4000
 const cors = require('cors')
 const corsOptions = {
     origin:'https://ecommerce-frontend-nine-kappa.vercel.app',
-    credentials: true,
     methods:'GET,POST',
     allowedHeaders: ['Content-Type', 'Authorization']
 }
