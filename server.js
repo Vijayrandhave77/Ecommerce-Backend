@@ -13,12 +13,12 @@ const searchRouter = require('./Routes/SearchRoute')
 const PORT = process.env.PORT || 4000
 const cors = require('cors')
 const corsOptions = {
-    origin:'http://localhost:5000',
+    origin:'https://ecommerce-frontend-nine-kappa.vercel.app',
     methods:'GET,POST',
     allowedHeaders: ['Content-Type', 'Authorization']
 }
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.get('/',(req,res)=>{
     res.send("Welcome to my VR77 E-commerce website")
