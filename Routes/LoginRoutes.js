@@ -18,7 +18,12 @@ router.post('/api/user/login',async(req,res)=>{
             userEmail:user.userEmail
          }
          const token = generateToken(payload);
-         res.cookie('jwtToken',token);
+         res.cookie('jwtToken',token,{
+            maxAge: 3600000, // 1 hour in milliseconds
+            httpOnly: true,
+            secure: true,  
+            sameSite: 'Strict', 
+          });
           res.json({token})
         }catch(err){
         res.status(500).json({error:"internal server error"})
