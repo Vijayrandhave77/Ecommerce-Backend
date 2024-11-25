@@ -22,7 +22,7 @@ router.post('/api/user/login',async(req,res)=>{
             maxAge: 3600000, // 1 hour in milliseconds
             httpOnly: true,
             secure: true,  
-            sameSite: 'Strict', 
+            sameSite: 'None', 
           });
           res.json({token})
         }catch(err){
