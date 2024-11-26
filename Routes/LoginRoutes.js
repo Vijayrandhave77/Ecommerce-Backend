@@ -18,7 +18,7 @@ router.post('/api/user/login',async(req,res)=>{
             userEmail:user.userEmail
          }
          const token = generateToken(payload);
-         res.cookie('jwtToken',token,{
+         res.cookie('jwtTokenCookies',token,{
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), 
             httpOnly: true,
             secure: true,  
