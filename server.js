@@ -15,7 +15,8 @@ const cors = require('cors')
 const corsOptions = {
     origin:'https://ecommerce-frontend-nine-kappa.vercel.app',
     methods:'GET,POST',
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }
 
 app.use(cors(corsOptions))

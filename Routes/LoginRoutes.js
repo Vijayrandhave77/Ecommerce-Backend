@@ -19,10 +19,10 @@ router.post('/api/user/login',async(req,res)=>{
          }
          const token = generateToken(payload);
          res.cookie('jwtToken',token,{
-            maxAge: 3600000, // 1 hour in milliseconds
+            expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), 
             httpOnly: true,
             secure: true,  
-            sameSite: 'None', 
+            sameSite: 'none', 
           });
           res.json({token})
         }catch(err){
