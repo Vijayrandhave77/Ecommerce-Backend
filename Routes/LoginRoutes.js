@@ -18,17 +18,19 @@ router.post('/api/user/login',async(req,res)=>{
             userEmail:user.userEmail
          }
          const token = generateToken(payload);
-         res.cookie('jwtTokenCookies',token,{
-            expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), 
-            httpOnly: true,
-            secure: true,  
-            sameSite: 'none', 
-          });
+         res.cookie('jwtTokenCookies',token);
           res.json({token})
         }catch(err){
         res.status(500).json({error:"internal server error"})
     }
 });
 
+
+// ,{
+//    expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), 
+//    httpOnly: true,
+//    secure: true,  
+//    sameSite: 'none', 
+//  }
 
 module.exports = router;
